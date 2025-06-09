@@ -79,8 +79,8 @@ pipeline {
             
             steps {
                 sh '''
-                    npm install netfly-cli -g
-                    netfly --version
+                    npm install -g netlify-cli
+                    netlify --version
                 '''
             }
         }
