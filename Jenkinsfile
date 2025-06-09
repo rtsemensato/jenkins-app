@@ -78,7 +78,7 @@ pipeline {
             }
             
             steps {
-                '''
+                sh '''
                     npm install netfly-cli -g
                     netfly --version
                 '''
