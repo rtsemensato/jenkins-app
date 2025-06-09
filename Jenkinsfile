@@ -68,5 +68,21 @@ pipeline {
                 }
             }
         }
+
+        stage('Deploy') {
+            agent {
+                docker {
+                    image 'node:18-alpine'
+                    reuseNode true
+                }
+            }
+            
+            steps {
+                '''
+                    npm install netfly-cli -g
+                    netfly --version
+                '''
+            }
+        }
     }
 }
