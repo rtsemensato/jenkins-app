@@ -16,7 +16,7 @@ pipeline {
             }
             steps {
                 sh '''
-                    echo "Building ..."
+                    echo "Build"
                     ls -la
                     node --version
                     npm --version
@@ -53,7 +53,7 @@ pipeline {
                 stage('E2E') {
                     agent {
                         docker {
-                            image 'mcr.microsoft.com/playwright:v1.49.1-noble'
+                            image 'mcr.microsoft.com/playwright:v1.52.0-noble'
                             reuseNode true
                         }
                     }
@@ -124,7 +124,7 @@ pipeline {
         stage('Prod E2E') {
             agent {
                 docker {
-                    image 'mcr.microsoft.com/playwright:v1.49.1-noble'
+                    image 'mcr.microsoft.com/playwright:v1.52.0-noble'
                     reuseNode true
                 }
             }
